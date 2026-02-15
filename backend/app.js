@@ -2,12 +2,14 @@ const express = require("express");
 const app = express();
 const aiRoutes = require("./routes/ai.routes")
 const morgan = require("morgan")
+const cors = require('cors')
 
 
 app.use(express.json())
 app.use(morgan())
 
 
+app.use(cors())
 
 app.get("/",(req,res)=>{
     res.send("hello world")
