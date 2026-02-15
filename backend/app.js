@@ -9,7 +9,12 @@ app.use(express.json())
 app.use(morgan())
 
 
-app.use(cors())
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://your-vercel-app.vercel.app"
+  ]
+}));
 
 app.get("/",(req,res)=>{
     res.send("hello world")
